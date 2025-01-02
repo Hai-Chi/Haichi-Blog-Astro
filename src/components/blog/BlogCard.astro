@@ -1,0 +1,131 @@
+---
+import "../../styles/global.css"
+import BlogImage from "../../assets/blog/blog-image2.jpg"
+---
+
+<div class="container">
+    <img src={BlogImage.src} alt="blog-img.bmp" class="blog-image">
+    <div class="text-container">
+        <h3 class="title">Title Example</h3>
+        <div class="info">
+            <div class="info-item">
+                <div class="icon">
+                    <svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3097"><path d="M960 128H833c0-53-43-96-96-96h-16c-53 0-96 43-96 96H400c0-26.5-10.7-50.5-28.1-67.9C354.5 42.7 330.5 32 304 32h-16c-53 0-96 43-96 96H64c-35.3 0-64 28.6-64 64v736c0 35.3 28.7 64 64 64h896c35.3 0 64-28.7 64-64V192c0-35.4-28.7-64-64-64z m-271 8c0-22.1 17.9-40 40-40s40 17.9 40 40v80c0 22.1-17.9 40-40 40-11 0-21-4.5-28.3-11.7C693.5 237 689 227 689 216v-80z m-433 0c0-22.1 17.9-40 40-40s40 17.9 40 40v80c0 22.1-17.9 40-40 40-11 0-21-4.5-28.3-11.7C260.5 237 256 227 256 216v-80z m704 760c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V448h896v448z" p-id="3098" fill="#396FA2"></path></svg>
+                </div>
+                <span>2025-01-02</span>
+            </div>
+            <div class="info-item">
+                <div class="icon">
+                    <svg viewBox="0 0 1032 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="8181"><path d="M85.825737 214.431767l864.571964 0c44.777833 0 81.055061-36.291554 81.055061-81.054037 0-44.76146-36.277228-81.053014-81.055061-81.053014L85.825737 52.324716c-44.773739 0-81.054037 36.291554-81.054037 81.053014C4.7717 178.140213 41.051998 214.431767 85.825737 214.431767zM950.397702 430.575526 85.825737 430.575526c-44.773739 0-81.054037 36.278251-81.054037 81.053014 0 44.774763 36.279275 81.053014 81.054037 81.053014l864.571964 0c44.777833 0 81.055061-36.277228 81.055061-81.053014C1031.452762 466.853777 995.175534 430.575526 950.397702 430.575526zM950.397702 808.826336 85.825737 808.826336c-44.773739 0-81.054037 36.279275-81.054037 81.051991 0 44.776809 36.279275 81.055061 81.054037 81.055061l864.571964 0c44.777833 0 81.055061-36.278251 81.055061-81.055061C1031.452762 845.10561 995.175534 808.826336 950.397702 808.826336z" p-id="8182" fill="#396FA2"></path></svg>
+                </div>
+                <span>Example category</span>
+            </div>
+        </div>
+        <div class="description">
+            <p>A Simple Description Of The Article</p>
+            <p>A Simple Description Of The Article</p>
+        </div>
+        <div class="tags">
+            <div class="icon">
+                <svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="13543"><path d="M160.755264 64.708767c-52.871161 0-96.052636 43.177382-96.052636 96.010681L64.702628 384.970862c0 52.749388 30.578436 126.584 68.009953 163.941839l382.333802 382.327662c37.314861 37.399795 98.380658 37.399795 135.775336 0l280.4606-280.413528c37.352723-37.394678 37.352723-98.506525 0-135.859247L548.912701 132.635833c-37.357839-37.394678-111.109564-67.927065-163.941839-67.927065L160.755264 64.708767 160.755264 64.708767zM288.335964 384.184963c-52.913117 0-95.842859-42.930765-95.842859-95.842859 0-52.91721 42.929742-95.842859 95.842859-95.842859 52.916187 0 95.842859 42.929742 95.842859 95.842859C384.178823 341.253174 341.252151 384.184963 288.335964 384.184963L288.335964 384.184963zM288.335964 384.184963" p-id="13544" fill="#396FA2"></path></svg>
+            </div>
+            <p>tag1 / tag2 / tag3</p>
+        </div>
+    </div>
+</div>
+
+<style>
+    .container {
+        min-height: 200px;
+        width: 60vw;
+        padding: 30px;
+        background-color: #fff;
+        border-radius: 20px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+        display: flex;
+        align-items: center;
+        flex-direction: row-reverse;
+        flex-wrap: wrap;
+    }
+
+    .title {
+        margin: 0;
+        font-size: 30px;
+        border-left: rgb(92, 171, 255) 5px solid;
+        padding-left: 20px;
+        text-shadow: 1px 1px 3px #999;
+    }
+
+   .info {
+        display: flex;
+        justify-content: start;
+        align-items: start;
+        margin: 10px 0 0 30px;
+    }
+
+    .info-item {
+        display: flex;
+        align-items: center;
+        margin-right: 15px;
+    }
+
+    svg{
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .info-item .icon{
+        padding: 5px 5px;
+        display: flex;
+        align-items: center;
+        background-color: rgb(140, 207, 255,0.5);
+        border-radius: 5px;
+    }
+
+   .info-item span{
+        margin-left: 10px;
+        font-size: 18px;
+        color: #666;
+    }
+
+    .text-container .description{
+        margin: 20px 0 0 30px;
+        font-size: 18px;
+        color: #444;
+        vertical-align: middle;
+    }
+
+    .text-container{
+        flex: 1;
+    }
+
+    .blog-image{
+        height: 200px;
+        margin-left: 20px;
+        border-radius: 10px;
+    }
+
+    .tags{
+        display: flex;
+        align-items: center;
+        margin: 20px 0 0 30px;
+    }
+
+   .tags .icon{
+        padding: 5px 5px;
+        display: flex;
+        align-items: center;
+        background-color: rgb(140, 207, 255,0.5);
+        border-radius: 5px;
+    }
+
+   .tags p{
+        margin-left: 10px;
+        font-size: 18px;
+        color: #666;
+    }
+
+</style>
