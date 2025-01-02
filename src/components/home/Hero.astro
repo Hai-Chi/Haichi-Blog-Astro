@@ -1,0 +1,84 @@
+---
+import hero from "../../assets/hero/hero.png";
+import hero_mask from "../../assets/hero/hero_mask.png";
+---
+
+<div class="container">
+    <img src={hero.src} class="hero" />
+    <img src={hero_mask.src} class="hero-mask" />
+    <div class="text">
+        <h1 class="title">HAICHI's Blog</h1>
+        <h2 class="subtitle">欢迎光临小海浅湾</h2>
+    </div>
+</div>
+
+<script>
+    let hero = document.querySelector(".hero") as HTMLImageElement;
+    let hero_mask = document.querySelector(".hero-mask") as HTMLImageElement;
+    let text = document.querySelector(".text") as HTMLDivElement;
+
+    window.addEventListener("scroll", function () {
+        let value = window.scrollY;
+        hero.style.top = value * 0.2 + "px";
+        hero_mask.style.top = value * 0 + "px";
+        text.style.marginTop = value * 0.5 + "px";
+    });
+</script>
+
+<style>
+    .container {
+        position: relative;
+        max-width: 100%;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .container img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center;
+        transform: scale(1.1, 1);
+    }
+
+    .hero-mask {
+        z-index: -1;
+    }
+
+    .hero {
+        z-index: -3;
+        filter: blur(8px);
+    }
+
+    .text {
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -2;
+    }
+
+    .title {
+        margin: 0;
+        font-size: 6vw;
+        color: rgb(247, 247, 247);
+        text-shadow:
+            3px 3px 7px rgba(0, 0, 0, 0.8),
+            5px 5px 70px rgba(255, 255, 255, 0.5);
+        white-space: nowrap;
+    }
+
+    .subtitle {
+        margin: 0;
+        padding-left: 8px;
+        font-size: 2vw;
+        color: rgb(247, 247, 247);
+        text-shadow:
+            3px 3px 7px rgba(0, 0, 0, 0.8),
+            5px 5px 70px rgba(255, 255, 255, 0.5);
+        white-space: nowrap;
+    }
+</style>
