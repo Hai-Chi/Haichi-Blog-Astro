@@ -1,3 +1,11 @@
+---
+layout: ../../../layouts/BlogLayout.astro
+title: Astro入门
+Date: 2025-01-07
+category: Astro
+tags: [Astro]
+---
+
 # 1.基本
 在`src/pages/`下创建的文件（.astro或.md文件），在访问时路径为`/`。
 
@@ -74,3 +82,48 @@ const { frontmatter } = Astro.props;
 <p>Written by {frontmatter.author}</p>
 <slot />
 ```
+
+# 9.astro api
+## 获取所有文章
+```astro
+---
+const allPosts = await Astro.glob('./posts/*.md');
+---
+<!-- 渲染文章列表 -->
+{allPosts.map((post) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
+```
+
+## 动态创建页面
+使用 .astro 文件创建整套动态页面，需要向外暴露一个 getStaticPaths() 函数。
+* 首先需要创建一个文件名中含有方括号的.astro文件, 例如：`[tag].astro`
+* 然后在该文件中创建 getStaticPaths() 函数
+```astro
+---
+export async function getStaticPaths() {
+  const allPosts = Object.values(import.meta.glob('../posts/*.md', { eager: true }));
+
+  return [
+    {params: {tag: "astro"}, props: {posts: allPosts}},
+    {params: {tag: "successes"}, props: {posts: allPosts}},
+    {params: {tag: "community"}, props: {posts: allPosts}},
+    {params: {tag: "blogging"}, props: {posts: allPosts}},
+    {params: {tag: "setbacks"}, props: {posts: allPosts}},
+    {params: {tag: "learning in public"}, props: {posts: allPosts}}
+  ];
+}
+---
+```
+* 提取路径参数
+```astro
+---
+// 获取URL中[tag]内部的值
+const { tag } = Astro.params;
+---
+* 获取props
+```astro
+const { posts } = Astro.props;
+```
+
+
+# 10.参考
+[FrontMatter中的YAML](https://dev.to/paulasantamaria/introduction-to-yaml-125f)

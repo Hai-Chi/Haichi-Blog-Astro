@@ -2,17 +2,13 @@
 import Footer from "../components/common/Footer.astro";
 import Header from "../components/common/Header.astro";
 import Background from "../components/common/Background.astro";
+import Head from "../components/common/Head.astro";
+import "../styles/global.css";
 ---
 
 <!doctype html>
 <html lang="zh">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>🚧 小海浅湾 施工中 🚧</title>
-	</head>
+	<Head />
 	<body>
 		<Header />
 		<main>

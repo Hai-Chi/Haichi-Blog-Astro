@@ -1,6 +1,11 @@
 ---
 import BlogCard from "../blog/BlogCard.astro";
 import IntroduceCard from "../blog/IntroduceCard.astro";
+import type { Post } from "../blog/BlogCard.astro";
+const allPosts = await Astro.glob("/src/pages/posts/*.md");
+const sortedPosts = allPosts.sort((a, b) =>
+    b.frontmatter.date.localeCompare(a.frontmatter.date),
+);
 ---
 
 <div class="container">
@@ -8,11 +13,15 @@ import IntroduceCard from "../blog/IntroduceCard.astro";
         <IntroduceCard />
     </div>
     <div class="blog-card-container">
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
+        {sortedPosts.map((post) => <BlogCard post={{
+            title: post.frontmatter.title,
+            description: post.frontmatter.description,
+            pubDate: new Date(post.frontmatter.pubDate),
+            heroImage: post.frontmatter.heroImage,
+            tags: post.frontmatter.tags,
+            category: post.frontmatter.category,
+            route: post.url
+            }} />)}
     </div>
 </div>
 

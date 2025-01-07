@@ -1,0 +1,21 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import "../styles/blog.css";
+---
+
+<BaseLayout>
+    <article class="markdown-container">
+        <slot />
+    </article>
+</BaseLayout>
+
+<style>
+    .markdown-container {
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+
+
+</style>
