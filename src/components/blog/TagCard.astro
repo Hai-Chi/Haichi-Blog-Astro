@@ -1,0 +1,84 @@
+---
+import profile from "../../assets/blog/profile.png";
+import { iconBackground, iconColor } from "../../styles/Variables.astro";
+
+
+const tagName = "测试";
+---
+
+<div class="container">
+    <h2 class="head">标签 Tags</h2>
+    <div class="divider"></div>
+    <ul class="tags">
+        <a href="">
+            <li class="tag">{tagName}</li>
+        </a>
+        <a href="">
+            <li class="tag">{tagName}</li>
+        </a>
+        <a href="">
+            <li class="tag">{tagName}</li>
+        </a>
+        <a href="">
+            <li class="tag">{tagName}</li>
+        </a>
+        <a href="">
+            <li class="tag">{tagName}</li>
+        </a>
+    </ul>
+</div>
+
+<style define:vars={{ iconBackground, iconColor }}>
+    .container {
+        padding: 10px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .head {
+        margin: 0;
+        padding: 0;
+        font-size: 20px;
+        font-weight: bold;
+        color: #555;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .divider {
+        width: 80px;
+        height: 5px;
+        border-radius: 5px;
+        background-color: rgb(92, 171, 255);
+        margin-top: 5px;
+    }
+
+    .tags {
+        list-style: none;
+        padding: 10px 0;
+        margin: 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px;
+        
+    }
+
+    a{
+        text-decoration: none;
+    }
+
+    .tag {
+        padding: 5px 10px;
+        background-color: var(--iconBackground);
+        color: var(--iconColor);
+        border-radius: 5px;
+        font-weight: bold;
+    }
+</style>

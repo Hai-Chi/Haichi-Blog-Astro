@@ -1,7 +1,14 @@
 ---
 import BlogImage from "../../assets/blog/blog-image2.jpg";
+import {
+    cardBackground,
+    cardShadow,
+    blueStripe,
+    iconBackground,
+    iconColor,
+} from "../../styles/Variables.astro";
 
-export interface Post{
+export interface Post {
     title: string;
     description: string;
     pubDate: Date;
@@ -12,20 +19,21 @@ export interface Post{
 }
 
 interface Props {
-    post: Post
+    post: Post;
 }
 
 const {
     title = "标题示例",
     pubDate = new Date(),
-    category = '未分类',
-    description = '作者很懒，这篇文章居然没有描述',
-    tags = ['tag1','tag2'],
-    route = ''
+    category = "未分类",
+    description = "作者很懒，这篇文章居然没有描述",
+    tags = ["tag1", "tag2"],
+    route = "",
 } = Astro.props.post;
 
-const formattedDate = pubDate.toISOString().split('T')[0];
+const formattedDate = pubDate.toISOString().split("T")[0];
 ---
+
 <div class="container">
     <img src={BlogImage.src} alt="blog-img.bmp" class="blog-image" />
     <div class="text-container">
@@ -78,13 +86,13 @@ const formattedDate = pubDate.toISOString().split('T')[0];
                         fill="#396FA2"></path></svg
                 >
             </div>
-            <p>{tags.join(' / ')}</p>
+            <p>{tags.join(" / ")}</p>
         </div>
     </div>
 </div>
 
-<style>
-    a{
+<style define:vars={{ cardBackground, cardShadow, blueStripe, iconBackground, iconColor }}>
+    a {
         text-decoration: none;
         color: unset;
     }
@@ -93,9 +101,9 @@ const formattedDate = pubDate.toISOString().split('T')[0];
         min-height: 200px;
         width: 60vw;
         padding: 30px;
-        background-color: #fff;
+        background-color: var(--cardBackground);
         border-radius: 20px;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+        box-shadow: var(--cardShadow);
         display: flex;
         align-items: center;
         flex-direction: row-reverse;
@@ -105,7 +113,7 @@ const formattedDate = pubDate.toISOString().split('T')[0];
     .title {
         margin: 0;
         font-size: 30px;
-        border-left: rgb(92, 171, 255) 5px solid;
+        border-left: var(--blueStripe) 5px solid;
         padding-left: 20px;
         text-shadow: 1px 1px 3px #999;
     }
@@ -135,7 +143,7 @@ const formattedDate = pubDate.toISOString().split('T')[0];
         padding: 5px 5px;
         display: flex;
         align-items: center;
-        background-color: rgb(140, 207, 255, 0.5);
+        background-color: var(--iconBackground);
         border-radius: 5px;
     }
 
@@ -172,7 +180,7 @@ const formattedDate = pubDate.toISOString().split('T')[0];
         padding: 5px 5px;
         display: flex;
         align-items: center;
-        background-color: rgb(140, 207, 255, 0.5);
+        background-color: var(--iconBackground);
         border-radius: 5px;
     }
 

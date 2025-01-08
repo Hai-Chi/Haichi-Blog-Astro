@@ -1,7 +1,9 @@
 ---
 import BlogCard from "../blog/BlogCard.astro";
 import IntroduceCard from "../blog/IntroduceCard.astro";
-import type { Post } from "../blog/BlogCard.astro";
+import CategoryCard from "../blog/CategoryCard.astro";
+import TagCard from "../blog/TagCard.astro";
+
 const allPosts = await Astro.glob("/src/pages/posts/*.md");
 const sortedPosts = allPosts.sort((a, b) =>
     b.frontmatter.date.localeCompare(a.frontmatter.date),
@@ -11,6 +13,8 @@ const sortedPosts = allPosts.sort((a, b) =>
 <div class="container">
     <div class="introduce-card-container">
         <IntroduceCard />
+        <CategoryCard />
+        <TagCard /> 
     </div>
     <div class="blog-card-container">
         {sortedPosts.map((post) => <BlogCard post={{
@@ -39,5 +43,11 @@ const sortedPosts = allPosts.sort((a, b) =>
         display: flex;
         flex-direction: column;
         gap: 30px;
+    }
+
+    .introduce-card-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
     }
 </style>

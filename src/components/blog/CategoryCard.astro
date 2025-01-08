@@ -1,0 +1,82 @@
+---
+import profile from "../../assets/blog/profile.png";
+import { iconBackground, iconColor } from "../../styles/Variables.astro";
+
+const categoryName = "测试";
+const categoryCount = 10;
+---
+
+<div class="container">
+    <h2 class="head">分类 Categories</h2>
+    <div class="divider"></div>
+    <ul class="categories">
+        <li class="category">
+            <a class="name" href="">{categoryName}</a>
+            <div class="count">{categoryCount}</div>
+        </li>
+    </ul>
+</div>
+
+<style define:vars={{iconBackground, iconColor}}>
+    .container {
+        padding: 10px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .head {
+        margin: 0;
+        padding: 0;
+        font-size: 20px;
+        font-weight: bold;
+        color: #555;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .divider {
+        width: 80px;
+        height: 5px;
+        border-radius: 5px;
+        background-color: rgb(92, 171, 255);
+        margin-top: 5px;
+    }
+
+    .categories {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .category {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .name {
+        font-size: 18px;
+        font-weight: bold;
+        color: #666;
+        text-decoration: none;
+    }
+
+   .count {
+        font-size: 16px;
+        background-color: var(--iconBackground);
+        color: var(--iconColor);
+        padding: 5px;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+</style>
