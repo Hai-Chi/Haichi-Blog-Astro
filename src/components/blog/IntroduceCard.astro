@@ -1,9 +1,10 @@
 ---
+import { Image } from "astro:assets";
 import profile from "../../assets/blog/profile.png";
 ---
 
 <div class="container">
-    <img src={profile.src} alt="" />
+    <Image src={profile} alt="profile"/>
     <h2 class="name">海炽HaiChi</h2>
     <div class="divider"></div>
     <div class="description">
@@ -20,6 +21,10 @@ import profile from "../../assets/blog/profile.png";
 </div>
 
 <style>
+    img{
+        width: unset;
+        height: unset;
+    }
     .container {
         padding: 10px;
         background-color: #fff;

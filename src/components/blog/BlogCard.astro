@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import BlogImage from "../../assets/blog/blog-image2.jpg";
 import {
     cardBackground,
@@ -33,9 +34,8 @@ const {
 
 const formattedDate = pubDate.toISOString().split("T")[0];
 ---
-
 <div class="container">
-    <img src={BlogImage.src} alt="blog-img.bmp" class="blog-image" />
+    <Image src={BlogImage} alt="blog-image" class="blog-image" />
     <div class="text-container">
         <a href={route}><h3 class="title">{title}</h3></a>
         <div class="info">
@@ -166,6 +166,7 @@ const formattedDate = pubDate.toISOString().split("T")[0];
 
     .blog-image {
         height: 200px;
+        width: unset;
         margin-left: 20px;
         border-radius: 10px;
     }

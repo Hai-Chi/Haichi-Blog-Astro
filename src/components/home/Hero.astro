@@ -1,11 +1,12 @@
 ---
+import { Image } from "astro:assets";
 import hero from "../../assets/hero/hero.png";
 import hero_mask from "../../assets/hero/hero_mask.png";
 ---
 
 <div class="container">
-    <img src={hero.src} class="hero" />
-    <img src={hero_mask.src} class="hero-mask" />
+    <Image src={hero}, alt="hero" , class="hero" />
+    <Image src={hero_mask}, alt="hero_mask" , class="hero_mask" />
     <div class="text">
         <h1 class="title">HAICHI's Blog</h1>
         <h2 class="subtitle">欢迎光临小海浅湾</h2>
@@ -14,7 +15,6 @@ import hero_mask from "../../assets/hero/hero_mask.png";
 
 <script>
     let hero = document.querySelector(".hero") as HTMLImageElement;
-    let hero_mask = document.querySelector(".hero-mask") as HTMLImageElement;
     let text = document.querySelector(".text") as HTMLDivElement;
 
     window.addEventListener("scroll", function () {
@@ -25,6 +25,12 @@ import hero_mask from "../../assets/hero/hero_mask.png";
 </script>
 
 <style>
+    @media (max-width: 768px) {
+        .container {
+            display: none;
+        }
+    }
+
     .container {
         position: relative;
         max-width: 100%;
@@ -43,7 +49,7 @@ import hero_mask from "../../assets/hero/hero_mask.png";
         transform: scale(1.1, 1);
     }
 
-    .container::before{
+    .container::before {
         content: "";
         position: absolute;
         bottom: 0;
