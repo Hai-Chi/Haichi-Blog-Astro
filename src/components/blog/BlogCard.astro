@@ -16,22 +16,17 @@ interface Props {
 }
 
 const post = Astro.props.post;
-const {
-    title,
-    description,
-    category,
-    tags,
-    pubDate,
-} = post.data;
+const { title, description, category, tags, pubDate } = post.data;
 
-const route = '';
+const route = post.id;
 
 const formattedDate = pubDate.toISOString().split("T")[0];
 ---
+
 <div class="container">
     <Image src={BlogImage} alt="blog-image" class="blog-image" />
     <div class="text-container">
-        <a href={route}><h3 class="title">{title}</h3></a>
+        <a href={`/blog-posts/${route}`}><h3 class="title">{title}</h3></a>
         <div class="info">
             <div class="info-item">
                 <div class="icon">
@@ -85,7 +80,15 @@ const formattedDate = pubDate.toISOString().split("T")[0];
     </div>
 </div>
 
-<style define:vars={{ cardBackground, cardShadow, blueStripe, iconBackground, iconColor }}>
+<style
+    define:vars={{
+        cardBackground,
+        cardShadow,
+        blueStripe,
+        iconBackground,
+        iconColor,
+    }}
+>
     a {
         text-decoration: none;
         color: unset;
