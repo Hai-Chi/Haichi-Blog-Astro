@@ -9,28 +9,22 @@ import {
     iconColor,
 } from "../../styles/Variables.astro";
 
-export interface Post {
-    title: string;
-    description: string;
-    pubDate: Date;
-    tags: string[];
-    category: string;
-    heroImage: string;
-    route: string;
-}
+import type { CollectionEntry } from "astro:content";
 
 interface Props {
-    post: Post;
+    post: CollectionEntry<"blogPost">;
 }
 
+const post = Astro.props.post;
 const {
-    title = "标题示例",
-    pubDate = new Date(),
-    category = "未分类",
-    description = "作者很懒，这篇文章居然没有描述",
-    tags = ["tag1", "tag2"],
-    route = "",
-} = Astro.props.post;
+    title,
+    description,
+    category,
+    tags,
+    pubDate,
+} = post.data;
+
+const route = '';
 
 const formattedDate = pubDate.toISOString().split("T")[0];
 ---

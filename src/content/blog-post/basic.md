@@ -5,7 +5,7 @@ pubDate: 2025-01-07
 category: Astro
 tags: [Astro]
 description: Astro入门
-cover: /blog-placeholder-1.jpg
+cover: '/src/assets/blog/profile.png'
 draft: false
 ---
 
