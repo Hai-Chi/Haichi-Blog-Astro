@@ -7,8 +7,17 @@
   "exclude": [
     "dist"
   ],
-  // "compilerOptions": {
-  //   // 内容集合需要
-  //   "allowJs": true
-  // }
+  "compilerOptions": {
+    // 内容集合需要
+    "allowJs": true,
+    "baseUrl": ".",
+    "paths": {
+      "@assets/*": ["src/assets/*"],
+      "@components/*": ["src/components/*"],
+      "@content/*": ["src/content/*"],
+      "@layouts/*": ["src/layouts/*"],
+      "@pages/*": ["src/pages/*"],
+      "@styles/*": ["src/styles/*"],
+    }
+  }
 }

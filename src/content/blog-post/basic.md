@@ -1,12 +1,12 @@
 ---
-layout: "../../layouts/BlogLayout.astro"
+layout: "@layouts/BlogLayout.astro"
 title: Astro入门
 pubDate: 2025-01-07
 category: Astro
 tags: [Astro]
 description: Astro入门
-cover: '/src/assets/blog/profile.png'
-draft: false
+cover: '@assets/blog/profile.png'
+draft: true
 ---
 
 # 1.基本
