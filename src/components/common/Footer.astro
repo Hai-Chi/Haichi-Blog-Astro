@@ -8,11 +8,14 @@ const year = new Date().getFullYear();
             <p>
                 Copyright © 2024 ~ {year}
                 <a href="https://space.bilibili.com/30966165" class="name"
-                    ><b>海炽Hai_Chi</b></a>
+                    ><b>海炽Hai_Chi</b></a
+                >
             </p>
             <p>Powered By <b>🚀Astro</b></p>
         </div>
-        <a href="https://beian.miit.gov.cn/" target="_blank" class="beian">京ICP备2023007222号</a>
+        <a href="https://beian.miit.gov.cn/" target="_blank" class="beian"
+            >京ICP备2023007222号</a
+        >
     </div>
 </footer>
 
@@ -27,14 +30,14 @@ const year = new Date().getFullYear();
         align-items: center;
     }
 
-    .container{
+    .container {
         flex: 1;
         max-width: 1200px;
     }
 
-    .info{
+    .info {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
     }
 
     .info p {
@@ -54,5 +57,11 @@ const year = new Date().getFullYear();
         font-size: 14px;
         color: #666;
         text-decoration: none;
+    }
+
+    @media (max-width: 960px) {
+        .info {
+            flex-direction: column;
+        }
     }
 </style>

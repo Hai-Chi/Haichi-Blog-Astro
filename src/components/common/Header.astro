@@ -21,7 +21,7 @@
                                 fill=""
                                 p-id="1010"></path></svg
                         >
-                        主页
+                        <span>主页</span>
                     </li>
                 </a>
                 <a href="/blog-posts"
@@ -40,7 +40,7 @@
                                 fill=""
                                 p-id="1170"></path></svg
                         >
-                        文章
+                        <span>文章</span>
                     </li></a
                 >
                 <!-- <a href=""
@@ -71,33 +71,36 @@
                                 d="M646.093 578.3c-36.787 21.177-79.258 33.465-124.762 33.465-48.211 0-93.1-13.843-131.309-37.382C214.4 627.529 86.394 792.188 86.394 987.337c0 2.284 0.288 4.53 0.345 6.796H937.3c0.02-2.284 0.346-4.53 0.346-6.796C937.606 796.7 815.322 635.285 646.093 578.3zM521.331 72.533c-138.605 0-250.963 112.34-250.963 250.925 0 90.336 47.962 169.306 119.635 213.562 38.227 23.52 83.117 37.382 131.309 37.382 45.504 0 87.974-12.288 124.762-33.465 75.283-43.277 126.144-124.378 126.144-217.46 0.019-138.604-112.34-250.944-250.887-250.944z"
                                 fill=""
                                 p-id="1329"></path></svg
-                        >关于
+                        ><span>关于</span>
                     </li></a
                 >
             </ul>
         </nav>
-        <div class="tool-bar">
-            <div class="search">
-                <!-- <input type="text" placeholder="搜索" /> -->
-            </div>
-        </div>
     </div>
 </header>
+<div class="padding"></div>
 
 <style>
+    .padding {
+        height: 80px;
+    }
+
     header {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
         padding: 0 20px;
         border-bottom: 1px solid #ccc;
         box-shadow: 0 0px 10px rgba(0, 0, 0, 0.3);
+        background-color: #fff;
         z-index: 10000000;
+        position: fixed;
+        width: 100%;
     }
 
     .header-container {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
         max-width: 1200px;
         height: 80px;
@@ -133,7 +136,9 @@
         height: 20px;
     }
 
-    .tool-bar .search {
-        width: 200px;
+    @media (max-width: 400px) {
+        header span{
+            display: none;
+        }
     }
 </style>
