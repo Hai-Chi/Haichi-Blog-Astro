@@ -3,7 +3,7 @@ import { glob, file } from 'astro/loaders';
 
 //  定义集合
 const blogPost = defineCollection({ 
-    loader: glob({pattern: "**/*.md", base: "@content/blog-post"}),
+    loader: glob({pattern: "**/*.md", base: "./src/content/blog-post"}),
     schema: z.object({
         title: z.string(),
         description: z.string(),
