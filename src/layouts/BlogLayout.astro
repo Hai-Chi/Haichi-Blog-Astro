@@ -27,7 +27,7 @@ const formattedDate = pubDate.toISOString().split("T")[0];
 <BaseLayout>
     <div class="markdown-container">
         <div class="text-container">
-            <a href={`/blog-posts/${route}`}><h3 class="title">{title}</h3></a>
+            <a href={`/blog-posts/${route}`}><h3 class="title" transition:name=`md-title-${post.id}`>{title}</h3></a>
             <div class="info">
                 <div class="info-item">
                     <div class="icon">

@@ -1,4 +1,4 @@
-<header>
+<header transition:animate="none">
     <div class="header-container">
         <div class="logo">
             <a href="/">小海浅湾</a>
@@ -78,7 +78,6 @@
         </nav>
     </div>
 </header>
-<div class="padding"></div>
 
 <style>
     .padding {
@@ -93,8 +92,9 @@
         border-bottom: 1px solid #ccc;
         box-shadow: 0 0px 10px rgba(0, 0, 0, 0.3);
         background-color: #fff;
-        z-index: 10000000;
-        position: fixed;
+        z-index: 1;
+        position: sticky;
+        top: 0;
         width: 100%;
     }
 
